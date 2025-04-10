@@ -1,9 +1,9 @@
 # SuiteCloud Java CLI Docker Image
 
-FROM ubuntu:24.04
+FROM node:lts-alpine
 
 # Install base pipeline dependencies ()
-RUN apt update && apt install -y xmlstarlet wget openjdk-17-jdk-headless nodejs
+RUN apk add --no-cache xmlstarlet wget openjdk17-jre-headless
 
 # Install SDF CLI for Java
 RUN mkdir -p /opt/sdf/sdk/
